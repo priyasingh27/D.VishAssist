@@ -4,10 +4,7 @@ import datetime
 import wikipedia #pip install wikipedia
 import webbrowser
 import smtplib
-import webbrowser as wb
 from PIL import Image
-
-wb.register('chrome',None)
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -107,19 +104,11 @@ if __name__ == "__main__":
             os.startfile(os.path.join(music_dir, songs[0]))
 
 
-        elif 'play my favourite song' in query:
-            print("(Create a folder named as 'Fav' in 'F' drive and put your music there.)")
-            music_dir = 'F:\\Fav'
-            songs = os.listdir(music_dir)
-            print(songs)
-            os.startfile(os.path.join(music_dir, songs[0]))
-
-
-        elif 'email to Deepansh' in query:
+        elif 'email to priya' in query:
             try:
                 speak("What should I say?")
                 content = takeCommand()
-                to = "deepansh.dubey20@gmail.com"
+                to = "priyasingh27@gmail.com"
                 sendEmail(to, content)
                 speak("Email has been sent!")
             except Exception as e:
